@@ -71,7 +71,8 @@ body {
   transition: color 0.2s;
 }
 
-.main-nav a:hover { color: var(--white); }
+.main-nav a:hover,
+.main-nav a.active { color: var(--white); }
 
 .cta-link {
   color: var(--crimson) !important;
@@ -584,7 +585,199 @@ body {
   font-size: 0.8rem;
 }
 
+/* Page Hero (sub-pages) */
+.page-hero {
+  position: relative;
+  min-height: 45vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  padding: 8rem 1.5rem 3rem;
+  background: radial-gradient(ellipse at center, #1a1a1a 0%, var(--black) 70%);
+}
+
+.page-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(45deg, rgba(227,6,19,0.03) 0px, rgba(227,6,19,0.03) 2px, transparent 2px, transparent 40px);
+  pointer-events: none;
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+
+.page-hero h1 {
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-shadow: 0 0 30px rgba(227,6,19,0.3);
+}
+
+.page-hero-sub {
+  margin-top: 1.25rem;
+  color: var(--gray);
+  font-size: 1.05rem;
+}
+
+/* Nav Cards (home) */
+.nav-cards {
+  padding: 6rem 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.nav-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+}
+
+.nav-card {
+  display: block;
+  background: var(--dark);
+  border: 1px solid #222;
+  border-radius: 6px;
+  padding: 2rem;
+  text-decoration: none;
+  color: var(--white);
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.nav-card:hover {
+  border-color: var(--crimson);
+  transform: translateY(-3px);
+}
+
+.nav-card h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.nav-card p { color: var(--gray); margin-bottom: 1rem; font-size: 0.9rem; }
+
+.nav-card-link {
+  color: var(--crimson);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+/* Newsletter */
+.newsletter-signup {
+  padding: 6rem 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.newsletter-card {
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+.newsletter-sub {
+  color: var(--gray);
+  margin: -2rem auto 2rem;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.newsletter-form input[type="email"] {
+  flex: 1;
+  min-width: 220px;
+  background: var(--dark);
+  border: 1px solid #333;
+  color: var(--white);
+  padding: 0.9rem 1.2rem;
+  border-radius: 2px;
+  font-size: 0.95rem;
+}
+
+.newsletter-form input[type="email"]:focus {
+  outline: none;
+  border-color: var(--crimson);
+}
+
+.newsletter-form button { border: none; cursor: pointer; }
+
+.newsletter-note {
+  margin-top: 1.5rem;
+  color: #555;
+  font-size: 0.8rem;
+}
+
+/* Contact Page */
+.contact-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 6rem 1.5rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+}
+
+.contact-form-card .section-title { text-align: left; }
+.contact-form-card .section-title::after { margin-left: 0; }
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  background: var(--dark);
+  border: 1px solid #333;
+  color: var(--white);
+  padding: 0.9rem 1.2rem;
+  border-radius: 2px;
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--crimson);
+}
+
+.contact-form button {
+  border: none;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.contact-sidebar h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+  color: var(--crimson);
+  font-size: 1rem;
+}
+
+.social-grid.vertical {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.social-grid.vertical a { text-align: center; }
+
 @media (max-width: 700px) {
   .main-nav { display: none; }
   .footer-bottom { flex-direction: column; text-align: center; }
+  .contact-page { grid-template-columns: 1fr; }
 }
