@@ -59,7 +59,17 @@ body {
   color: var(--white);
   text-decoration: none;
   font-size: 1.1rem;
+  display: inline-flex;
+  align-items: center;
 }
+
+.logo-img {
+  height: 34px;
+  width: auto;
+  display: block;
+}
+
+.footer-bottom .logo-img { height: 28px; }
 
 .main-nav a {
   color: var(--gray);
