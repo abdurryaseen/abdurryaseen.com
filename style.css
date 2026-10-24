@@ -64,12 +64,12 @@ body {
 }
 
 .logo-img {
-  height: 42px;
+  height: 32px;
   width: auto;
   display: block;
 }
 
-.footer-bottom .logo-img { height: 30px; }
+.footer-bottom .logo-img { height: 22px; }
 
 .main-nav a {
   color: var(--gray);
