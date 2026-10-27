@@ -303,6 +303,33 @@ body {
 
 .platform-cta { display: inline-block; }
 
+.stat-list {
+  list-style: none;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.stat-list li {
+  position: relative;
+  padding-left: 1.1rem;
+  color: var(--gray);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.stat-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--crimson);
+}
+
 /* Reaffirm */
 .reaffirm {
   position: relative;
